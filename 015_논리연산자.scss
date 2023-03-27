@@ -1,0 +1,39 @@
+@debug not true;
+@debug not false;
+//true : 1
+//false : 0
+//or : 더하기
+//and : 곱
+@debug true and flase; // 1 곱하기 0 = 0 이니깐 flase /둘중하나라도 false 면 flase
+@debug true or flase; // 1 + 0  / 0이외의 다른 숫자들은 모두 true -1 같은 음수 다 포함
+@debug true or true; // 둘 중 하나라도 true라면 true 어떤 조건이든 하나라도 만족되면 true
+//두 조건이 모두 충족되는 경우
+$value: 32px;
+$color: red;
+p {
+  @if ($value >=32px and $color == red) {
+    letter-spacing: 1rem;
+  } @else {
+    letter-spacing: 0.5rem;
+  }
+}
+
+$value: 32px;
+$color: black;
+p {
+  @if ($value >=32px and $color == red) {
+    letter-spacing: 1rem;
+  } @else {
+    letter-spacing: 0.5rem;
+  }
+}
+
+$value: 32px;
+$color2: red;
+p {
+  @if ($value >=32px or $color2 == black) {
+    letter-spacing: 1rem;
+  } @else {
+    letter-spacing: 0.5rem;
+  }
+}
